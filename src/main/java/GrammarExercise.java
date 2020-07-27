@@ -17,7 +17,7 @@ public class GrammarExercise {
             List<String> validFirstWordList = isInputValid(firstWordList);
             List<String> validSecondWordList = isInputValid(secondWordList);
             return  validFirstWordList.stream()
-                    .filter(s->validSecondWordList.contains(s))
+                    .filter(validSecondWordList::contains)
                     .distinct()
                     .map(s -> String.join(" ", s.split("")))
                     .sorted(Comparator.comparing(a -> ((String) a)))
